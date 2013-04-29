@@ -1,0 +1,743 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>LTUManager Class Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">LTUManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/initializeSharedLTUManagerWithUsername:andPassword:">&nbsp;&nbsp;&nbsp;&nbsp;+ initializeSharedLTUManagerWithUsername:andPassword:</option>
+	
+	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/cancelAllRequests">&nbsp;&nbsp;&nbsp;&nbsp;- cancelAllRequests</option>
+	
+	<option value="//api/name/cancelAllSearchRequests">&nbsp;&nbsp;&nbsp;&nbsp;- cancelAllSearchRequests</option>
+	
+	<option value="//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- createVisualInProject:withTitle:withImage:andMetadata:success:failure:</option>
+	
+	<option value="//api/name/getProjectsWithSuccess:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getProjectsWithSuccess:failure:</option>
+	
+	<option value="//api/name/initWithLTUClient:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithLTUClient:</option>
+	
+	<option value="//api/name/searchInProjects:withImage:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- searchInProjects:withImage:success:failure:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initializeSharedLTUManagerWithUsername:andPassword:">initializeSharedLTUManagerWithUsername:andPassword:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelAllRequests">cancelAllRequests</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelAllSearchRequests">cancelAllSearchRequests</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:">createVisualInProject:withTitle:withImage:andMetadata:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getProjectsWithSuccess:failure:">getProjectsWithSuccess:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithLTUClient:">initWithLTUClient:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchInProjects:withImage:success:failure:">searchInProjects:withImage:success:failure:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="LTUManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">LTUManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">LTUManager.h<br />LTUManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>LTUManager</code> helps with accessing the LTU API.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
+		<span class="tooltip"><p>A shared instance of the LTU Manager</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initializeSharedLTUManagerWithUsername:andPassword:">+&nbsp;initializeSharedLTUManagerWithUsername:andPassword:</a></code>
+		<span class="tooltip"><p>Create a shared instance of the LTUManager</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithLTUClient:">&ndash;&nbsp;initWithLTUClient:</a></code>
+		<span class="tooltip"><p>Initialize a <code>LTUManager</code> with a <a href="../Classes/LTUClient.html"><code>LTUClient</code></a></p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getProjectsWithSuccess:failure:">&ndash;&nbsp;getProjectsWithSuccess:failure:</a></code>
+		<span class="tooltip"><p>Retreive a list of <a href="../Classes/LTUProject.html"><code>LTUProject</code></a> objects from the LTU API</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/searchInProjects:withImage:success:failure:">&ndash;&nbsp;searchInProjects:withImage:success:failure:</a></code>
+		<span class="tooltip"><p>Search the LTU API in selected projects with image</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelAllSearchRequests">&ndash;&nbsp;cancelAllSearchRequests</a></code>
+		<span class="tooltip"><p>Cancel all Search Requests</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:">&ndash;&nbsp;createVisualInProject:withTitle:withImage:andMetadata:success:failure:</a></code>
+		<span class="tooltip"><p>Create a Visual within a project</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelAllRequests">&ndash;&nbsp;cancelAllRequests</a></code>
+		<span class="tooltip"><p>Cancel all requests</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initializeSharedLTUManagerWithUsername:andPassword:" title="initializeSharedLTUManagerWithUsername:andPassword:"></a>
+	<h3 class="subsubtitle method-title">initializeSharedLTUManagerWithUsername:andPassword:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a shared instance of the LTUManager</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)initializeSharedLTUManagerWithUsername:(NSString *)<em>username</em> andPassword:(NSString *)<em>password</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><ul>
+<li>LTU API Username</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><ul>
+<li>LTU API Password</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="subsubtitle method-title">sharedManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A shared instance of the LTU Manager</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (LTUManager *)sharedManager</code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A shared manager helps with using the same instance throughout the application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelAllRequests" title="cancelAllRequests"></a>
+	<h3 class="subsubtitle method-title">cancelAllRequests</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Cancel all requests</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)cancelAllRequests</code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will cancel all current requests which include: Searching images, creating visuals, and getting a list of projects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelAllSearchRequests" title="cancelAllSearchRequests"></a>
+	<h3 class="subsubtitle method-title">cancelAllSearchRequests</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Cancel all Search Requests</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)cancelAllSearchRequests</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:" title="createVisualInProject:withTitle:withImage:andMetadata:success:failure:"></a>
+	<h3 class="subsubtitle method-title">createVisualInProject:withTitle:withImage:andMetadata:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a Visual within a project</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)createVisualInProject:(NSInteger)<em>projectID</em> withTitle:(NSString *)<em>title</em> withImage:(UIImage *)<em>image</em> andMetadata:(NSArray *)<em>metadataArray</em> success:(void ( ^ ) ( LTUVisual *createdVisual ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>projectID</em></dt>
+			<dd><ul>
+<li>The project to create the visual in</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><ul>
+<li>Title associated with the Visual</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><ul>
+<li>Image used for the visual</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><ul>
+<li>Block to be executed when a visual was successfully created</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><ul>
+<li>Block to be executed when creating a visual fails</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>metadataList</em></dt>
+			<dd><ul>
+<li>Array of <a href="../Classes/LTUMetaData.html"><code>LTUMetaData</code></a> objects to be added when creating a visual</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getProjectsWithSuccess:failure:" title="getProjectsWithSuccess:failure:"></a>
+	<h3 class="subsubtitle method-title">getProjectsWithSuccess:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retreive a list of <a href="../Classes/LTUProject.html"><code>LTUProject</code></a> objects from the LTU API</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getProjectsWithSuccess:(void ( ^ ) ( NSArray *projectList ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><ul>
+<li>Block to be executed when succesfully downloading a list of projects</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><ul>
+<li>Block to be executed when retrieving the projects failed.</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithLTUClient:" title="initWithLTUClient:"></a>
+	<h3 class="subsubtitle method-title">initWithLTUClient:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize a <code>LTUManager</code> with a <a href="../Classes/LTUClient.html"><code>LTUClient</code></a></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithLTUClient:(LTUClient *)<em>client</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/searchInProjects:withImage:success:failure:" title="searchInProjects:withImage:success:failure:"></a>
+	<h3 class="subsubtitle method-title">searchInProjects:withImage:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Search the LTU API in selected projects with image</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)searchInProjects:(NSArray *)<em>projectIDs</em> withImage:(UIImage *)<em>image</em> success:(void ( ^ ) ( LTUQuery *queryResult ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>projectIDs</em></dt>
+			<dd><ul>
+<li>Array of NSNumbers representing the project IDs to search in.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><ul>
+<li>An image to search with</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><ul>
+<li>Block to be executed with the <a href="../Classes/LTUQuery.html"><code>LTUQuery</code></a> on succesfully searching the image</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><ul>
+<li>Block to be executed when the search image fails.</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 LTU Technologies. All rights reserved. (Last updated: 2013-04-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

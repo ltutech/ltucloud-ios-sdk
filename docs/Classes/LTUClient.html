@@ -1,0 +1,769 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>LTUClient Class Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">LTUClient Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/setSharedClient:">&nbsp;&nbsp;&nbsp;&nbsp;+ setSharedClient:</option>
+	
+	<option value="//api/name/sharedClient">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedClient</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/cancelAllRequests">&nbsp;&nbsp;&nbsp;&nbsp;- cancelAllRequests</option>
+	
+	<option value="//api/name/cancelPostRequestAtPath:">&nbsp;&nbsp;&nbsp;&nbsp;- cancelPostRequestAtPath:</option>
+	
+	<option value="//api/name/createResourceWithData:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- createResourceWithData:success:failure:</option>
+	
+	<option value="//api/name/getResourceListOfType:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getResourceListOfType:success:failure:</option>
+	
+	<option value="//api/name/initWithBaseURL:withUser:andPassword:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithBaseURL:withUser:andPassword:</option>
+	
+	<option value="//api/name/isRequestInProgress">&nbsp;&nbsp;&nbsp;&nbsp;- isRequestInProgress</option>
+	
+	<option value="//api/name/updateUser:andPassword:">&nbsp;&nbsp;&nbsp;&nbsp;- updateUser:andPassword:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Setting the shared client">Setting the shared client</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSharedClient:">setSharedClient:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedClient">sharedClient</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelAllRequests">cancelAllRequests</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelPostRequestAtPath:">cancelPostRequestAtPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createResourceWithData:success:failure:">createResourceWithData:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getResourceListOfType:success:failure:">getResourceListOfType:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithBaseURL:withUser:andPassword:">initWithBaseURL:withUser:andPassword:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isRequestInProgress">isRequestInProgress</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateUser:andPassword:">updateUser:andPassword:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="LTUClient Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">LTUClient Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">LTUClient.h<br />LTUClient.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>LTUClient</code> sets up a way to interact with the lookthatup API</p>
+
+<p>How to use the <code>LTUClient</code>:</p>
+
+<pre><code>LTUClient *client = [[LTUClient alloc] initWithBaseURL:@"https://api.lookthatup.com/"
+                                              withUser:@"user"
+                                           andPassword:@"password"];
+[LTUClient setSharedClient: client];
+</code></pre>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Setting the shared client" name="task_Setting the shared client"></a>
+						
+<h3 class="subsubtitle task-title">Setting the shared client</h3>
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSharedClient:">+&nbsp;setSharedClient:</a></code>
+		<span class="tooltip"><p>Once an <code>LTUClient</code> is initialized, you can add this to the shared client</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedClient">+&nbsp;sharedClient</a></code>
+		<span class="tooltip"><p>Retrieve the shared client</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelAllRequests">&ndash;&nbsp;cancelAllRequests</a></code>
+		<span class="tooltip"><p>Method to cancel all requests being performed by the client</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelPostRequestAtPath:">&ndash;&nbsp;cancelPostRequestAtPath:</a></code>
+		<span class="tooltip"><p>Method to cancel a specific POST request</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getResourceListOfType:success:failure:">&ndash;&nbsp;getResourceListOfType:success:failure:</a></code>
+		<span class="tooltip"><p>Get the list of a particular lookthatup resource, such as projects</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createResourceWithData:success:failure:">&ndash;&nbsp;createResourceWithData:success:failure:</a></code>
+		<span class="tooltip"><p>Create a particular lookthatup resource, such as <a href="../Classes/LTUVisual.html"><code>LTUVisual</code></a>, <a href="../Classes/LTUQuery.html"><code>LTUQuery</code></a>, etc</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithBaseURL:withUser:andPassword:">&ndash;&nbsp;initWithBaseURL:withUser:andPassword:</a></code>
+		<span class="tooltip"><p>Initializes the <code>LTUClient</code> with the API URL and authentication info</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isRequestInProgress">&ndash;&nbsp;isRequestInProgress</a></code>
+		<span class="tooltip"><p>Checks the state if at least 1 request is in progress.  Multiple requests can be in progress.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateUser:andPassword:">&ndash;&nbsp;updateUser:andPassword:</a></code>
+		<span class="tooltip"><p>Update the authentication information of a new user</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/setSharedClient:" title="setSharedClient:"></a>
+	<h3 class="subsubtitle method-title">setSharedClient:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Once an <code>LTUClient</code> is initialized, you can add this to the shared client</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)setSharedClient:(LTUClient *)<em>sharedClient</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sharedClient</em></dt>
+			<dd><p>The new client to be used</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedClient" title="sharedClient"></a>
+	<h3 class="subsubtitle method-title">sharedClient</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve the shared client</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (LTUClient *)sharedClient</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The shared client containing the API URL and authentication information</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelAllRequests" title="cancelAllRequests"></a>
+	<h3 class="subsubtitle method-title">cancelAllRequests</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method to cancel all requests being performed by the client</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)cancelAllRequests</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelPostRequestAtPath:" title="cancelPostRequestAtPath:"></a>
+	<h3 class="subsubtitle method-title">cancelPostRequestAtPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method to cancel a specific POST request</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)cancelPostRequestAtPath:(NSString *)<em>path</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The resource path that is performing the post request to be canceled</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createResourceWithData:success:failure:" title="createResourceWithData:success:failure:"></a>
+	<h3 class="subsubtitle method-title">createResourceWithData:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a particular lookthatup resource, such as <a href="../Classes/LTUVisual.html"><code>LTUVisual</code></a>, <a href="../Classes/LTUQuery.html"><code>LTUQuery</code></a>, etc</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)createResourceWithData:(LTUResourceData *)<em>rData</em> success:(void ( ^ ) ( LTUResourceData *responseData ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rData</em></dt>
+			<dd><p>The resource data which is a subclass of <a href="../Classes/LTUResourceData.html"><code>LTUResourceData</code></a>, such as <a href="../Classes/LTUQuery.html"><code>LTUQuery</code></a> or <a href="../Classes/LTUVisual.html"><code>LTUVisual</code></a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block that gets executed when creating the resource succeeds, returning the newly created resource.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block that gets executed when resource creation fails</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getResourceListOfType:success:failure:" title="getResourceListOfType:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getResourceListOfType:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the list of a particular lookthatup resource, such as projects</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getResourceListOfType:(Class)<em>rType</em> success:(void ( ^ ) ( NSArray *resourceList ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rType</em></dt>
+			<dd><p>The resource type, a subclass of <a href="../Classes/LTUResourceData.html"><code>LTUResourceData</code></a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block that gets executed when retrieving the resource list succesfully</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block that gets executed when retriveing the list fails</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithBaseURL:withUser:andPassword:" title="initWithBaseURL:withUser:andPassword:"></a>
+	<h3 class="subsubtitle method-title">initWithBaseURL:withUser:andPassword:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the <code>LTUClient</code> with the API URL and authentication info</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithBaseURL:(NSURL *)<em>url</em> withUser:(NSString *)<em>user</em> andPassword:(NSString *)<em>password</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>The base API URL for lookthatup</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>user</em></dt>
+			<dd><p>The username of the lookthatup account</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password of the lookthatup account</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is the designated initializer for the <code>LTUClient</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isRequestInProgress" title="isRequestInProgress"></a>
+	<h3 class="subsubtitle method-title">isRequestInProgress</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks the state if at least 1 request is in progress.  Multiple requests can be in progress.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)isRequestInProgress</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>boolean value returning whether a request is in progress or not</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateUser:andPassword:" title="updateUser:andPassword:"></a>
+	<h3 class="subsubtitle method-title">updateUser:andPassword:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update the authentication information of a new user</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)updateUser:(NSString *)<em>user</em> andPassword:(NSString *)<em>password</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>user</em></dt>
+			<dd><p>The username of the user</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password of the user</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is handy when you want someone to log in with different lookthatup accounts in your app</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LTUClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 LTU Technologies. All rights reserved. (Last updated: 2013-04-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>
