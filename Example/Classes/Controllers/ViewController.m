@@ -73,15 +73,16 @@ static NSInteger const projectID = -1;
   [[LTUManager sharedManager] searchInProjects:projectIDs withImage:image
    success:^(LTUQuery *queryResult)
    {
-     self.searchingView.hidden = YES;
-     self.searchImageButton.hidden = NO;
      [self displaySuccessfulSearchImageResult:queryResult];
    }
    failure:^(NSError *error)
    {
+     [self displayError:error];
+   }
+   finished:^
+   {
      self.searchingView.hidden = YES;
      self.searchImageButton.hidden = NO;
-     [self displayError:error];
    }];
 }
 

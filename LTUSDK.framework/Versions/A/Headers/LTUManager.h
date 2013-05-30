@@ -49,9 +49,11 @@
 
  @param success - Block to be executed when succesfully downloading a list of projects
  @param failure - Block to be executed when retrieving the projects failed.
+ @param finished - Block that's always executed AFTER the success/failure blocks
  */
 - (void)getProjectsWithSuccess:(void (^)(NSArray *projectList))success
-                            failure:(void (^)(NSError *error))failure;
+                       failure:(void (^)(NSError *error))failure
+                      finished:(void (^)())finished;
 
 /**
  Search the LTU API in selected projects with image
@@ -60,11 +62,13 @@
  @param image - An image to search with
  @param success - Block to be executed with the `LTUQuery` on succesfully searching the image
  @param failure - Block to be executed when the search image fails.
+ @param finished - Block that's always executed AFTER the success/failure blocks
  */
 - (void)searchInProjects:(NSArray *)projectIDs
                withImage:(UIImage *)image
                  success:(void (^)(LTUQuery *queryResult))success
-                 failure:(void (^)(NSError *error))failure;
+                 failure:(void (^)(NSError *error))failure
+                finished:(void (^)())finished;
 
 /**
  Cancel all Search Requests
@@ -80,13 +84,15 @@
  @param metadataList - Array of `LTUMetaData` objects to be added when creating a visual
  @param success - Block to be executed when a visual was successfully created
  @param failure - Block to be executed when creating a visual fails
+ @param finished - Block that's always executed AFTER the success/failure blocks
  */
 - (void)createVisualInProject:(NSInteger)projectID
                     withTitle:(NSString *)title
                     withImage:(UIImage *)image
                   andMetadata:(NSArray*)metadataArray
                       success:(void (^)(LTUVisual *createdVisual))success
-                      failure:(void (^)(NSError *error))failure;
+                      failure:(void (^)(NSError *error))failure
+                     finished:(void (^)())finished;
 
 /**
  Cancel all requests

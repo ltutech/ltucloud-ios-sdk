@@ -5,7 +5,7 @@ This guide will help you get started on using the LTU Cloud API with your iPhone
 
 Requirements
 ------------
-The LTU Mobile iOS SDK library is built for use with iOS 5 and up.  It uses AFNetworking, so you'll need to add this in your project.  Info on how to set up AFNetworking can be found here: https://github.com/AFNetworking/
+The LTU Mobile iOS SDK library is built for use with iOS 5 and up.  The sample projects require XCode 4.5 and up.  It uses AFNetworking, so you'll need to add this in your project.  Info on how to set up AFNetworking can be found here: https://github.com/AFNetworking/
 
 The LTU SDK also requires the following frameworks:
 
@@ -71,6 +71,10 @@ All your projects can be retrieved via the LTU API as follows:
         failure:^(NSError *error)
         {
             // Handle error
+        }
+        finished:^
+        {
+            // Shared code on project request completion.
         }];
 
 #####Searching Images
@@ -86,6 +90,10 @@ The following is an example on how to search an image within a project:
         failure:^(NSError *error)
         {
             // Handle error
+        }
+        finished:^
+        {
+            // Shared code on Search Image request completion.
         }];
 
 #####Creating Visuals
@@ -108,6 +116,10 @@ To Create a Visual you must collect an array of LTUMetaData objects, and pass it
         failure:^(NSError *error)
         {
             // Handle error
+        }
+        finished:^
+        {
+            // Shared code on Creating Visual request completion.
         }];
 
 #####Canceling Requests

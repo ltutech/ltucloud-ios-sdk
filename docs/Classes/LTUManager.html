@@ -49,13 +49,13 @@
 	
 	<option value="//api/name/cancelAllSearchRequests">&nbsp;&nbsp;&nbsp;&nbsp;- cancelAllSearchRequests</option>
 	
-	<option value="//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- createVisualInProject:withTitle:withImage:andMetadata:success:failure:</option>
+	<option value="//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:">&nbsp;&nbsp;&nbsp;&nbsp;- createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:</option>
 	
-	<option value="//api/name/getProjectsWithSuccess:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getProjectsWithSuccess:failure:</option>
+	<option value="//api/name/getProjectsWithSuccess:failure:finished:">&nbsp;&nbsp;&nbsp;&nbsp;- getProjectsWithSuccess:failure:finished:</option>
 	
 	<option value="//api/name/initWithLTUClient:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithLTUClient:</option>
 	
-	<option value="//api/name/searchInProjects:withImage:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- searchInProjects:withImage:success:failure:</option>
+	<option value="//api/name/searchInProjects:withImage:success:failure:finished:">&nbsp;&nbsp;&nbsp;&nbsp;- searchInProjects:withImage:success:failure:finished:</option>
 	
 	
 	
@@ -97,13 +97,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelAllSearchRequests">cancelAllSearchRequests</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:">createVisualInProject:withTitle:withImage:andMetadata:success:failure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:">createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getProjectsWithSuccess:failure:">getProjectsWithSuccess:failure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getProjectsWithSuccess:failure:finished:">getProjectsWithSuccess:failure:finished:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithLTUClient:">initWithLTUClient:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchInProjects:withImage:success:failure:">searchInProjects:withImage:success:failure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchInProjects:withImage:success:failure:finished:">searchInProjects:withImage:success:failure:finished:</a></span></li>
 	
 </ul></li>
 
@@ -181,14 +181,14 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getProjectsWithSuccess:failure:">&ndash;&nbsp;getProjectsWithSuccess:failure:</a></code>
+		<code><a href="#//api/name/getProjectsWithSuccess:failure:finished:">&ndash;&nbsp;getProjectsWithSuccess:failure:finished:</a></code>
 		<span class="tooltip"><p>Retreive a list of <a href="../Classes/LTUProject.html"><code>LTUProject</code></a> objects from the LTU API</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/searchInProjects:withImage:success:failure:">&ndash;&nbsp;searchInProjects:withImage:success:failure:</a></code>
+		<code><a href="#//api/name/searchInProjects:withImage:success:failure:finished:">&ndash;&nbsp;searchInProjects:withImage:success:failure:finished:</a></code>
 		<span class="tooltip"><p>Search the LTU API in selected projects with image</p></span>
 	</span>
 	
@@ -202,7 +202,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:">&ndash;&nbsp;createVisualInProject:withTitle:withImage:andMetadata:success:failure:</a></code>
+		<code><a href="#//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:">&ndash;&nbsp;createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:</a></code>
 		<span class="tooltip"><p>Create a Visual within a project</p></span>
 	</span>
 	
@@ -397,8 +397,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:" title="createVisualInProject:withTitle:withImage:andMetadata:success:failure:"></a>
-	<h3 class="subsubtitle method-title">createVisualInProject:withTitle:withImage:andMetadata:success:failure:</h3>
+	<a name="//api/name/createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:" title="createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:"></a>
+	<h3 class="subsubtitle method-title">createVisualInProject:withTitle:withImage:andMetadata:success:failure:finished:</h3>
 	
 	
 	
@@ -407,7 +407,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)createVisualInProject:(NSInteger)<em>projectID</em> withTitle:(NSString *)<em>title</em> withImage:(UIImage *)<em>image</em> andMetadata:(NSArray *)<em>metadataArray</em> success:(void ( ^ ) ( LTUVisual *createdVisual ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)createVisualInProject:(NSInteger)<em>projectID</em> withTitle:(NSString *)<em>title</em> withImage:(UIImage *)<em>image</em> andMetadata:(NSArray *)<em>metadataArray</em> success:(void ( ^ ) ( LTUVisual *createdVisual ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em> finished:(void ( ^ ) ( ))<em>finished</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -454,6 +454,14 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
+			<dt><em>finished</em></dt>
+			<dd><ul>
+<li>Block that&rsquo;s always executed AFTER the success/failure blocks</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
 			<dt><em>metadataList</em></dt>
 			<dd><ul>
 <li>Array of <a href="../Classes/LTUMetaData.html"><code>LTUMetaData</code></a> objects to be added when creating a visual</li>
@@ -482,8 +490,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getProjectsWithSuccess:failure:" title="getProjectsWithSuccess:failure:"></a>
-	<h3 class="subsubtitle method-title">getProjectsWithSuccess:failure:</h3>
+	<a name="//api/name/getProjectsWithSuccess:failure:finished:" title="getProjectsWithSuccess:failure:finished:"></a>
+	<h3 class="subsubtitle method-title">getProjectsWithSuccess:failure:finished:</h3>
 	
 	
 	
@@ -492,7 +500,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)getProjectsWithSuccess:(void ( ^ ) ( NSArray *projectList ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getProjectsWithSuccess:(void ( ^ ) ( NSArray *projectList ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em> finished:(void ( ^ ) ( ))<em>finished</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -510,6 +518,14 @@
 			<dt><em>failure</em></dt>
 			<dd><ul>
 <li>Block to be executed when retrieving the projects failed.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>finished</em></dt>
+			<dd><ul>
+<li>Block that&rsquo;s always executed AFTER the success/failure blocks</li>
 </ul>
 </dd>
 		</dl>
@@ -567,8 +583,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/searchInProjects:withImage:success:failure:" title="searchInProjects:withImage:success:failure:"></a>
-	<h3 class="subsubtitle method-title">searchInProjects:withImage:success:failure:</h3>
+	<a name="//api/name/searchInProjects:withImage:success:failure:finished:" title="searchInProjects:withImage:success:failure:finished:"></a>
+	<h3 class="subsubtitle method-title">searchInProjects:withImage:success:failure:finished:</h3>
 	
 	
 	
@@ -577,7 +593,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)searchInProjects:(NSArray *)<em>projectIDs</em> withImage:(UIImage *)<em>image</em> success:(void ( ^ ) ( LTUQuery *queryResult ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)searchInProjects:(NSArray *)<em>projectIDs</em> withImage:(UIImage *)<em>image</em> success:(void ( ^ ) ( LTUQuery *queryResult ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em> finished:(void ( ^ ) ( ))<em>finished</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -615,6 +631,14 @@
 </dd>
 		</dl>
 		
+		<dl class="argument-def parameter-def">
+			<dt><em>finished</em></dt>
+			<dd><ul>
+<li>Block that&rsquo;s always executed AFTER the success/failure blocks</li>
+</ul>
+</dd>
+		</dl>
+		
 	</div>
 	
 	
@@ -648,7 +672,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LTU Technologies. All rights reserved. (Last updated: 2013-04-08)</span><br />
+						<p><span class="copyright">&copy; 2013 LTU Technologies. All rights reserved. (Last updated: 2013-05-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
