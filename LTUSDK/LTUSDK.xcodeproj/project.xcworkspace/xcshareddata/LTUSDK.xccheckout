@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4F92A8F4-B17A-4747-9618-2C7DF576F2B1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LTUSDK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7FF8FC18-6EFE-4CD1-9E26-45B7F307D5F9</key>
+		<string>https://github.com/AFNetworking/AFNetworking.git</string>
+		<key>E83B0815-8545-43C6-96BB-66687E2F2549</key>
+		<string>git://code.ltutech.com/ltumobile-ios-sdk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LTUSDK/LTUSDK.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7FF8FC18-6EFE-4CD1-9E26-45B7F307D5F9</key>
+		<string>../../../AFNetworking</string>
+		<key>E83B0815-8545-43C6-96BB-66687E2F2549</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git://code.ltutech.com/ltumobile-ios-sdk</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E83B0815-8545-43C6-96BB-66687E2F2549</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7FF8FC18-6EFE-4CD1-9E26-45B7F307D5F9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AFNetworking</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E83B0815-8545-43C6-96BB-66687E2F2549</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ltumobile-ios-sdk</string>
+		</dict>
+	</array>
+</dict>
+</plist>

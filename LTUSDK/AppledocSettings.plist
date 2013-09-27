@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>--company-id</key>
+	<string>com.ltu</string>
+	<key>--logformat</key>
+	<integer>1</integer>
+	<key>--print-settings</key>
+	<true/>
+	<key>--project-company</key>
+	<string>LTU Technologies</string>
+	<key>--project-name</key>
+	<string>LTUSDK</string>
+	<key>--repeat-first-par</key>
+	<false/>
+  <key>output</key>
+  <string>./docs</string>
+	<key>--templates</key>
+	<string>~/.appledoc/</string>
+	<key>--verbose</key>
+	<integer>3</integer>
+  <key>--create-docset</key>
+  <false/>
+  <key>--install-docset</key>
+  <false/>
+  <key>--input</key>
+  <array>
+    <string>./LTUCameraView.h</string>
+    <string>./LTUManager.h</string>
+    <string>./LTUClients</string>
+    <string>./LTUModels</string>
+    <string>./LTUModels/Query</string>
+    <string>./LTUModels/Common</string>
+    <string>./LTUModels/Visual</string>
+  </array>
+</dict>
+</plist>
