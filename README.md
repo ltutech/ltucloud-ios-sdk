@@ -7,6 +7,7 @@ app via the LTU Mobile iOS SDK.  The provided sample code uses ARC.
 
 Requirements
 ------------
+
 The LTU Mobile iOS SDK library is built for use with iOS 5 and up.  The sample
 projects require XCode 4.5 and up.  It uses AFNetworking (which is provided by
 the LTU SDK).
@@ -23,6 +24,7 @@ The LTU SDK also uses the following frameworks:
 
 Setup
 -----
+
 Before you get started on coding and using the LTU Mobile iOS SDK, you must set
 up your Xcode project. We suggest that you add the LTU SDK as a submodule of
 your project.
@@ -51,7 +53,9 @@ Import the LTUManager header for accessing all the classes and helper methods:
 
     #import <LTUSDK/LTUManager.h>
 
+
 #####Initialize Shared LTUManager
+
 This can be done in the app delegate.  The shared manager will let you send
 queries, create visuals and get a list of your projects.
 
@@ -98,16 +102,15 @@ To capture the image from the LTUCameraView:
 
 All your projects can be retrieved via the LTU API as follows:
 
-    [[LTUManager sharedManager] getProjectsWithSuccess:^(NSArray *projectList)
-        {
+    [[LTUManager sharedManager] getProjectsWithSuccess:^(NSArray *projectList) {
             // Store projects somewhere
         }
-        failure:^(NSError *error)
-        {
+
+        failure:^(NSError *error) {
             // Handle error
         }
-        finished:^
-        {
+
+        finished:^ {
             // Shared code on project request completion.
         }];
 
@@ -117,18 +120,17 @@ All your projects can be retrieved via the LTU API as follows:
 The following is an example on how to search an image within a project:
 
     UIImage *image = [self.camView captureImage];
-    NSArray *projectIDs = [NSArray arrayWithObject:[NSNumber numberWithInt:8]];
+    NSArray *projectIDs = @[@8];
     [[LTUManager sharedManager] searchInProjects:projectIDs withImage:image
-        success:^(LTUQuery *queryResult)
-        {
+        success:^(LTUQuery *queryResult) {
             // Parse Results
         }
-        failure:^(NSError *error)
-        {
+
+        failure:^(NSError *error) {
             // Handle error
         }
-        finished:^
-        {
+
+        finished:^ {
             // Shared code on Search Image request completion.
         }];
 
@@ -143,21 +145,20 @@ to the LTUManager's createVisual method:
                                                       forKey:@"Some Message"
                                                  andOrdering:0];
 
-    NSArray *myMetadata = [NSArray arrayWithObject:myData];
+    NSArray *myMetadata = @[myData];
     [[LTUManager sharedManager] createVisualInProject:6
                                             withTitle:@"FooTitle"
                                             withImage:image
                                           andMetadata:myMetadata
-        success:^(LTUVisual *createdVisual)
-        {
+        success:^(LTUVisual *createdVisual) {
             // Handle events when visual is created
         }
-        failure:^(NSError *error)
-        {
+
+        failure:^(NSError *error) {
             // Handle error
         }
-        finished:^
-        {
+
+        finished:^ {
             // Shared code on Creating Visual request completion.
         }];
 
@@ -178,5 +179,6 @@ visuals, and searching images:
 
 Class Overview
 --------------
+
 More detailed documentation about each class can be found under the docs folder
 provided with the SDK.
