@@ -106,6 +106,33 @@ static LTUManager *_sharedManager = nil;
   [self.client cancelPostRequestAtPath:[LTUQuery resourceListPath]];
 }
 
+- (void)getVisualById:(NSInteger)visualID
+              success:(void (^)(LTUVisual *createdVisual))success
+              failure:(void (^)(NSError *error))failure
+             finished:(void (^)())finished
+
+{
+    [self.client getResourceOfType:[LTUVisual class]
+                            withId:visualID
+                           success:^(LTUResourceData *responseData)
+     {
+         if (success)
+         {
+             success((LTUVisual *)responseData);
+             finished();
+         }
+     }
+                           failure:^(NSError *error)
+     {
+         if (failure)
+         {
+             failure(error);
+             finished();
+         }
+     }];
+}
+
+
 - (void)createVisualInProject:(NSInteger)projectID
                     withTitle:(NSString *)title
                     withImage:(UIImage *)image

@@ -29,7 +29,7 @@
     self.imageData  = nil;
     self.image_id   = [attributes[@"id"] intValue];
     self.media      = attributes[@"_media"];
-    self.source     = attributes[@"_source"];
+    self.source     = attributes[@"source"];
   }
   return self;
 }

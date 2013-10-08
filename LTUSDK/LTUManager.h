@@ -47,7 +47,7 @@
 /**
  Retreive a list of `LTUProject` objects from the LTU API
 
- @param success - Block to be executed when succesfully downloading a list of projects
+ @param success - Block to be executed when successfully downloading a list of projects
  @param failure - Block to be executed when retrieving the projects failed.
  @param finished - Block that's always executed AFTER the success/failure blocks
  */
@@ -55,12 +55,26 @@
                        failure:(void (^)(NSError *error))failure
                       finished:(void (^)())finished;
 
+
+/**
+ Retreive a `LTUVisual` objects from the LTU API
+ 
+ @param visualID - Id of the visual to get
+ @param success - Block to be executed when successfully getting the visual
+ @param failure - Block to be executed when getting the visual failed.
+ @param finished - Block that's always executed AFTER the success/failure blocks
+ */
+- (void)getVisualById:(NSInteger)visualID
+              success:(void (^)(LTUVisual *createdVisual))success
+              failure:(void (^)(NSError *error))failure
+             finished:(void (^)())finished;
+
 /**
  Search the LTU API in selected projects with image
 
  @param projectIDs - Array of NSNumbers representing the project IDs to search in.
  @param image - An image to search with
- @param success - Block to be executed with the `LTUQuery` on succesfully searching the image
+ @param success - Block to be executed with the `LTUQuery` on successfully searching the image
  @param failure - Block to be executed when the search image fails.
  @param finished - Block that's always executed AFTER the success/failure blocks
  */

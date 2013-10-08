@@ -61,9 +61,56 @@ static LTUClient *_sharedClient = nil;
   [self.afClient setAuthorizationHeaderWithUsername:user password:password];
 }
 
+- (void)getResourceOfType:(Class)rType
+                   withId:(NSInteger)resourceId
+                  success:(void (^)(LTUResourceData *resource))success
+                  failure:(void (^)(NSError *error))failure
+{
+    if (![rType isSubclassOfClass:[LTUResourceData class]]) {
+        @throw @"Expected LTUResourceData as Type";
+    }
+    // Use multipartFormRequestWithMethod..
+    NSString *urlPath = [rType resourceListPath];
+    urlPath = [urlPath stringByAppendingString:[NSString stringWithFormat:@"%d", resourceId]];
+    NSMutableURLRequest *request = [self.afClient requestWithMethod:@"GET"
+                                                               path:urlPath
+                                                         parameters:nil];
+    // Shorten the timeout interval, default is 60 seconds.
+    request.timeoutInterval = 30;
+    AFHTTPRequestOperation *operation = [self.afClient HTTPRequestOperationWithRequest:request
+    success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         if (success) {
+             success([[[rType class] alloc] initWithAttributes:responseObject]);
+         }
+     }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         // Failure block is optional
+         if (failure)
+         {
+             failure(error);
+         }
+     }];
+    
+    // Ignoring bad SSL certificates should be removed once we have valid certificates
+    // TODO: Remove once in production
+    [operation setAuthenticationAgainstProtectionSpaceBlock:^BOOL(NSURLConnection *connection, NSURLProtectionSpace *protectionSpace)
+     {
+         return YES;
+     }];
+    [operation setAuthenticationChallengeBlock:^(NSURLConnection *connection, NSURLAuthenticationChallenge *challenge)
+     {
+         [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+     }];
+    
+    [self.afClient enqueueHTTPRequestOperation:operation];
+}
+
+
 - (void)getResourceListOfType:(Class)rType
-                        success:(void (^)(NSArray *resourceList))success
-                        failure:(void (^)(NSError *error))failure
+                      success:(void (^)(NSArray *resourceList))success
+                      failure:(void (^)(NSError *error))failure
 {
   if (![rType isSubclassOfClass:[LTUResourceData class]])
   {
@@ -71,8 +118,8 @@ static LTUClient *_sharedClient = nil;
   }
   // Use multipartFormRequestWithMethod..
   NSMutableURLRequest *request = [self.afClient requestWithMethod:@"GET"
-                                                                        path:[rType resourceListPath]
-                                                                  parameters:nil];
+                                                             path:[rType resourceListPath]
+                                                       parameters:nil];
   // Shorten the timeout interval, default is 60 seconds.
   request.timeoutInterval = 30;
 
@@ -100,7 +147,7 @@ static LTUClient *_sharedClient = nil;
   }];
 
   // Ignoring bad SSL certificates should be removed once we have valid certificates
-  // TOOD: Remove once in production
+  // TODO: Remove once in production
   [operation setAuthenticationAgainstProtectionSpaceBlock:^BOOL(NSURLConnection *connection, NSURLProtectionSpace *protectionSpace)
    {
      return YES;

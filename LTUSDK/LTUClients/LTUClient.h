@@ -50,12 +50,25 @@
  Get the list of a particular lookthatup resource, such as projects
 
  @param rType The resource type, a subclass of `LTUResourceData`
- @param success A block that gets executed when retrieving the resource list succesfully
+ @param success A block that gets executed when retrieving the resource list successfully
  @param failure A block that gets executed when retriveing the list fails
  */
 - (void)getResourceListOfType:(Class)rType
                         success:(void (^)(NSArray *resourceList))success
                         failure:(void (^)(NSError *error))failure;
+
+
+/**
+ Get a lookthatup resource, such as a visual with resource id
+ 
+ @param rType The resource type, a subclass of `LTUResourceData`
+ @param success A block that gets executed when retrieving the resource successfully
+ @param failure A block that gets executed when retriveing a failure
+ */
+- (void)getResourceOfType:(Class)rType
+                   withId:(NSInteger)resourceId
+                  success:(void (^)(LTUResourceData *resource))success
+                  failure:(void (^)(NSError *error))failure;
 
 /**
  Create a particular lookthatup resource, such as `LTUVisual`, `LTUQuery`, etc
