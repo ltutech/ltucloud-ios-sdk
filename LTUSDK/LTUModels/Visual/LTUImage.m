@@ -34,4 +34,13 @@
   return self;
 }
 
+- (UIImage *)image
+{
+    if (_image == nil) {
+        _image = [self fetchImageWithURL:[NSURL URLWithString:[self.media objectForKey:@"image"]]];
+    }
+    
+    return _image;
+}
+
 @end

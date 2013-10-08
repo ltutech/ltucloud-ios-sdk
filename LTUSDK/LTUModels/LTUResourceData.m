@@ -63,4 +63,9 @@
   return [NSString stringWithFormat:@"%@/", [[NSURL URLWithString:self.links[@"self"]] path]];
 }
 
+- (UIImage *)fetchImageWithURL:(NSURL *)url
+{
+    return [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+}
+
 @end

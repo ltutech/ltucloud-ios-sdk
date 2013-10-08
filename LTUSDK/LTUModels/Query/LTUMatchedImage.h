@@ -15,9 +15,10 @@
 @interface LTUMatchedImage : LTUResourceData
 
 /**
- The Image that was matched.  This has to be downloaded separately from either the media[@"thumbnail"] or media[@"image"]
+ The Image that was matched.  This is downloaded when called for the first time.
  */
 @property (nonatomic, strong) UIImage       *image;
+@property (nonatomic, strong) UIImage       *thumbnail;
 /**
  Stores the links to the actual image and thumbnail
  */

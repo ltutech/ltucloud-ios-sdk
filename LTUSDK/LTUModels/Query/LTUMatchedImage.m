@@ -7,6 +7,7 @@
 
 #import "LTUMatchedImage.h"
 
+
 @implementation LTUMatchedImage
 
 - (id)initWithAttributes:(NSDictionary *)attributes
@@ -20,6 +21,24 @@
     self.score        = attributes[@"score"];
   }
   return self;
+}
+
+- (UIImage *)image
+{
+    if (_image == nil) {
+        _image = [self fetchImageWithURL:[NSURL URLWithString:[self.media objectForKey:@"image"]]];
+    }
+    
+    return _image;
+}
+
+- (UIImage *)thumbnail
+{
+    if (_thumbnail == nil) {
+        _thumbnail = [self fetchImageWithURL:[NSURL URLWithString:[self.media objectForKey:@"thumbnail"]]];
+    }
+    
+    return _thumbnail;
 }
 
 @end

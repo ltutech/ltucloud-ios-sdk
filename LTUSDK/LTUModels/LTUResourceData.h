@@ -93,4 +93,7 @@
  */
 - (NSString *)resourcePath;
 
+
+- (UIImage *)fetchImageWithURL:(NSURL *)url;
+
 @end
