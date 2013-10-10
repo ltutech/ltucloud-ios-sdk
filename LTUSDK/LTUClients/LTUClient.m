@@ -109,6 +109,7 @@ static LTUClient *_sharedClient = nil;
 
 
 - (void)getResourceListOfType:(Class)rType
+               withParameters:(NSDictionary *)params
                       success:(void (^)(NSArray *resourceList))success
                       failure:(void (^)(NSError *error))failure
 {
@@ -119,7 +120,7 @@ static LTUClient *_sharedClient = nil;
   // Use multipartFormRequestWithMethod..
   NSMutableURLRequest *request = [self.afClient requestWithMethod:@"GET"
                                                              path:[rType resourceListPath]
-                                                       parameters:nil];
+                                                       parameters:params];
   // Shorten the timeout interval, default is 60 seconds.
   request.timeoutInterval = 30;
 

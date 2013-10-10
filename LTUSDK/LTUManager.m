@@ -53,7 +53,7 @@ static LTUManager *_sharedManager = nil;
                        failure:(void (^)(NSError *error))failure
                       finished:(void (^)())finished
 {
-  [self.client getResourceListOfType:[LTUProject class]
+  [self.client getResourceListOfType:[LTUProject class] withParameters:nil
    success:^(NSArray *projectList)
    {
      if (success) {

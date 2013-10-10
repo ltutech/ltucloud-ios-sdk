@@ -45,7 +45,7 @@
 - (id)initWithLTUClient:(LTUClient *)client;
 
 /**
- Retreive a list of `LTUProject` objects from the LTU API
+ Retrieve a list of `LTUProject` objects from the LTU API
 
  @param success - Block to be executed when successfully downloading a list of projects
  @param failure - Block to be executed when retrieving the projects failed.
@@ -57,7 +57,7 @@
 
 
 /**
- Retreive a `LTUVisual` objects from the LTU API
+ Retrieve a `LTUVisual` objects from the LTU API
  
  @param visualID - Id of the visual to get
  @param success - Block to be executed when successfully getting the visual
@@ -68,6 +68,7 @@
               success:(void (^)(LTUVisual *createdVisual))success
               failure:(void (^)(NSError *error))failure
              finished:(void (^)())finished;
+
 
 /**
  Search the LTU API in selected projects with image

@@ -50,12 +50,14 @@
  Get the list of a particular lookthatup resource, such as projects
 
  @param rType The resource type, a subclass of `LTUResourceData`
+ @param params A dictionay with filter parameter for the resource to list
  @param success A block that gets executed when retrieving the resource list successfully
  @param failure A block that gets executed when retriveing the list fails
  */
 - (void)getResourceListOfType:(Class)rType
-                        success:(void (^)(NSArray *resourceList))success
-                        failure:(void (^)(NSError *error))failure;
+               withParameters:(NSDictionary *)params
+                      success:(void (^)(NSArray *resourceList))success
+                      failure:(void (^)(NSError *error))failure;
 
 
 /**
