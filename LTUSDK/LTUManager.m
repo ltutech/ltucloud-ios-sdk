@@ -43,8 +43,7 @@ static LTUManager *_sharedManager = nil;
 
 - (id)initWithLTUClient:(LTUClient *)client
 {
-  if ((self = [super init]))
-  {
+  if ((self = [super init])) {
     self.client = client;
   }
   return self;
@@ -57,16 +56,14 @@ static LTUManager *_sharedManager = nil;
   [self.client getResourceListOfType:[LTUProject class]
    success:^(NSArray *projectList)
    {
-     if (success)
-     {
+     if (success) {
        success(projectList);
        finished();
      }
    }
    failure:^(NSError *error)
    {
-     if (failure)
-     {
+     if (failure) {
        failure(error);
        finished();
      }
@@ -86,15 +83,13 @@ static LTUManager *_sharedManager = nil;
   [self.client createResourceWithData:queryData
     success:^(LTUResourceData *responseData)
     {
-      if (success)
-      {
+      if (success) {
         success((LTUQuery*)responseData);
         finished();
       }
     }
     failure:^(NSError *error) {
-      if (failure)
-      {
+      if (failure) {
         failure(error);
         finished();
       }
@@ -116,16 +111,14 @@ static LTUManager *_sharedManager = nil;
                             withId:visualID
                            success:^(LTUResourceData *responseData)
      {
-         if (success)
-         {
+         if (success) {
              success((LTUVisual *)responseData);
              finished();
          }
      }
                            failure:^(NSError *error)
      {
-         if (failure)
-         {
+         if (failure) {
              failure(error);
              finished();
          }
@@ -149,21 +142,52 @@ static LTUManager *_sharedManager = nil;
   [self.client createResourceWithData:visualData
     success:^(LTUResourceData *responseData)
     {
-      if (success)
-      {
+      if (success) {
         success((LTUVisual *)responseData);
         finished();
       }
     }
     failure:^(NSError *error)
     {
-      if (failure)
-      {
+      if (failure) {
         failure(error);
         finished();
       }
     }];
 }
+
+- (void)addImage:(UIImage *)image
+        inVisual:(NSInteger)visualId
+      withSource:(NSString *)source
+        withName:(NSString *)name
+         success:(void (^)(LTUImage *createdImage))success
+         failure:(void (^)(NSError *error))failure
+        finished:(void (^)())finished
+{
+    LTUImage *imageData = [[LTUImage alloc] init];
+    imageData.image = image;
+    imageData.visual_id = visualId;
+    imageData.source = source;
+    imageData.name = name;
+
+    [self.client createResourceWithData:imageData
+                                success:^(LTUResourceData *responseData)
+     {
+         if (success) {
+             success((LTUImage *)responseData);
+             finished();
+         }
+     }
+                                failure:^(NSError *error)
+     {
+         if (failure) {
+             failure(error);
+             finished();
+         }
+     }];
+}
+
+
 
 - (void)cancelAllRequests
 {

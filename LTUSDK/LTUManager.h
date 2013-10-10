@@ -109,6 +109,20 @@
                      finished:(void (^)())finished;
 
 /**
+ Add Image in Visual
+ 
+ @param image - The Image to add
+ @param visualId - The Visual to add the Image into
+ @param source - source description of the image
+ */
+- (void)addImage:(UIImage *)image
+        inVisual:(NSInteger)visualId
+      withSource:(NSString *)source
+        withName:(NSString *)name
+         success:(void (^)(LTUImage *createdImage))success
+         failure:(void (^)(NSError *error))failure
+        finished:(void (^)())finished;
+/**
  Cancel all requests
 
  @discussion This method will cancel all current requests which include: Searching images, creating visuals, and getting a list of projects.

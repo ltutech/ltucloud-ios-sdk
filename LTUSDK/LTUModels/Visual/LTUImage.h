@@ -35,6 +35,10 @@
  */
 @property (nonatomic, strong) NSString      *source;
 /**
+ Name of the image, this is an optional field and can sometimes be nil.
+ */
+@property (nonatomic, strong) NSString      *name;
+/**
  The `LTUVisual` ID that the `LTUImage` is linked to
  */
 @property NSInteger                         visual_id;

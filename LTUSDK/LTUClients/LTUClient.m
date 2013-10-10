@@ -174,7 +174,7 @@ static LTUClient *_sharedClient = nil;
                                               if (attachment)
                                               {
                                                 [formData appendPartWithFileData:attachment.fieldData
-                                                                             name:attachment.fieldName
+                                                                            name:attachment.fieldName
                                                                         fileName:@"image.jpg"
                                                                         mimeType:@"image/jpeg"];
                                               }
