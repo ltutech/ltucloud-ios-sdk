@@ -125,6 +125,33 @@ static LTUManager *_sharedManager = nil;
      }];
 }
 
+- (void)getVisualByName:(NSString *)visualName
+              inProject:(NSInteger)projectId
+                success:(void (^)(LTUVisual *foundVisual))success
+                failure:(void (^)(NSError *error))failure
+               finished:(void (^)())finished
+{
+    [self.client getResourceListOfType:[LTUVisual class]
+                        withParameters:@{@"name" : visualName}
+                               success:^(NSArray *visualList)
+     {
+         if (success) {
+             if (visualList == nil || [visualList count] == 0) {
+                 success(nil);
+             } else {
+                 success((LTUVisual *)[visualList firstObject]);
+             }
+             finished();
+         }
+     }
+                               failure:^(NSError *error)
+     {
+         if (failure) {
+             failure(error);
+             finished();
+         }
+     }];
+}
 
 - (void)createVisualInProject:(NSInteger)projectID
                     withTitle:(NSString *)title

@@ -69,6 +69,20 @@
               failure:(void (^)(NSError *error))failure
              finished:(void (^)())finished;
 
+/**
+ Retreive a `LTUVisual` objects from the LTU API
+ 
+ @param visualName - Full name of the visual to get
+ @param projectId - Id of the project to search in
+ @param success - Block to be executed when successfully getting the visual
+ @param failure - Block to be executed when getting the visual failed.
+ @param finished - Block that's always executed AFTER the success/failure blocks
+ */
+- (void)getVisualByName:(NSString *)visualName
+              inProject:(NSInteger)projectId
+                success:(void (^)(LTUVisual *foundVisual))success
+                failure:(void (^)(NSError *error))failure
+               finished:(void (^)())finished;
 
 /**
  Search the LTU API in selected projects with image
@@ -129,5 +143,15 @@
  @discussion This method will cancel all current requests which include: Searching images, creating visuals, and getting a list of projects.
  */
 - (void)cancelAllRequests;
+
+
+/**
+ Cancel all requests
+ 
+ @discussion This method will cancel all current requests which include: Searching images, creating visuals, and getting a list of projects.
+ */
+- (void)waitUntilAllOperationsAreFinished;
+
+
 
 @end
