@@ -153,6 +153,37 @@ static LTUManager *_sharedManager = nil;
      }];
 }
 
+- (void)getImageInVisual:(NSInteger)visualID
+              withSource:(NSString *)source
+                 success:(void (^)(LTUImage *foundImage))success
+                 failure:(void (^)(NSError *error))failure
+                finished:(void (^)())finished
+{
+    NSString *url = [NSString stringWithFormat:@"%@projects/visuals/%ld/images/", kLTURootAPIPath, (long)visualID];
+    [self.client getResourceListOfType:[LTUImage class]
+                                 atUrl: url
+                        withParameters:@{@"source" : source}
+                               success:^(NSArray *imageList)
+     {
+         if (success) {
+             if (imageList == nil || [imageList count] == 0) {
+                 success(nil);
+             } else {
+                 success((LTUImage *)[imageList firstObject]);
+             }
+             finished();
+         }
+     }
+                               failure:^(NSError *error)
+     {
+         if (failure) {
+             failure(error);
+             finished();
+         }
+     }];
+
+}
+
 - (void)createVisualInProject:(NSInteger)projectID
                     withTitle:(NSString *)title
                     withImage:(UIImage *)image

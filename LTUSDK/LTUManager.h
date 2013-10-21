@@ -49,7 +49,7 @@
 
  @param success - Block to be executed when successfully downloading a list of projects
  @param failure - Block to be executed when retrieving the projects failed.
- @param finished - Block that's always executed AFTER the success/failure blocks
+ @param finished - Block that is always executed AFTER the success/failure blocks
  */
 - (void)getProjectsWithSuccess:(void (^)(NSArray *projectList))success
                        failure:(void (^)(NSError *error))failure
@@ -62,7 +62,7 @@
  @param visualID - Id of the visual to get
  @param success - Block to be executed when successfully getting the visual
  @param failure - Block to be executed when getting the visual failed.
- @param finished - Block that's always executed AFTER the success/failure blocks
+ @param finished - Block that is always executed AFTER the success/failure blocks
  */
 - (void)getVisualById:(NSInteger)visualID
               success:(void (^)(LTUVisual *createdVisual))success
@@ -76,13 +76,31 @@
  @param projectId - Id of the project to search in
  @param success - Block to be executed when successfully getting the visual
  @param failure - Block to be executed when getting the visual failed.
- @param finished - Block that's always executed AFTER the success/failure blocks
+ @param finished - Block that is always executed AFTER the success/failure blocks
  */
 - (void)getVisualByName:(NSString *)visualName
               inProject:(NSInteger)projectId
                 success:(void (^)(LTUVisual *foundVisual))success
                 failure:(void (^)(NSError *error))failure
                finished:(void (^)())finished;
+
+
+
+/**
+ Retreive a `LTUImage` in a visual with a source
+ 
+ @param visualID - Id of the visual to look in
+ @param source - Get image with particular source
+ @param success - Block to be executed when successfully getting the visual
+ @param failure - Block to be executed when getting the visual failed.
+ @param finished - Block that is always executed AFTER the success/failure blocks
+ */
+- (void)getImageInVisual:(NSInteger)visualID
+              withSource:(NSString *)source
+                 success:(void (^)(LTUImage *foundImage))success
+                 failure:(void (^)(NSError *error))failure
+                finished:(void (^)())finished;
+
 
 /**
  Search the LTU API in selected projects with image
@@ -91,7 +109,7 @@
  @param image - An image to search with
  @param success - Block to be executed with the `LTUQuery` on successfully searching the image
  @param failure - Block to be executed when the search image fails.
- @param finished - Block that's always executed AFTER the success/failure blocks
+ @param finished - Block that is always executed AFTER the success/failure blocks
  */
 - (void)searchInProjects:(NSArray *)projectIDs
                withImage:(UIImage *)image
@@ -113,7 +131,7 @@
  @param metadataList - Array of `LTUMetaData` objects to be added when creating a visual
  @param success - Block to be executed when a visual was successfully created
  @param failure - Block to be executed when creating a visual fails
- @param finished - Block that's always executed AFTER the success/failure blocks
+ @param finished - Block that is always executed AFTER the success/failure blocks
  */
 - (void)createVisualInProject:(NSInteger)projectID
                     withTitle:(NSString *)title

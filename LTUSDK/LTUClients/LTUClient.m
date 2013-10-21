@@ -133,8 +133,7 @@ static LTUClient *_sharedClient = nil;
       [resourceList addObject:[[[rType class] alloc] initWithAttributes:attributes]];
     }
     // Success block is optional
-    if (success)
-    {
+    if (success) {
       success(resourceList);
     }
   }
@@ -161,6 +160,59 @@ static LTUClient *_sharedClient = nil;
   [self.afClient enqueueHTTPRequestOperation:operation];
 }
 
+
+- (void)getResourceListOfType:(Class)rType
+                        atUrl:(NSString *)url
+               withParameters:(NSDictionary *)params
+                      success:(void (^)(NSArray *resourceList))success
+                      failure:(void (^)(NSError *error))failure
+{
+    if (![rType isSubclassOfClass:[LTUResourceData class]])
+    {
+        @throw @"Expected LTUResourceData as Type";
+    }
+    // Use multipartFormRequestWithMethod..
+    NSMutableURLRequest *request = [self.afClient requestWithMethod:@"GET"
+                                                               path:url
+                                                         parameters:params];
+    // Shorten the timeout interval, default is 60 seconds.
+    request.timeoutInterval = 30;
+    
+    AFHTTPRequestOperation *operation = [self.afClient HTTPRequestOperationWithRequest:request
+                                                                               success:^(AFHTTPRequestOperation *operation, id responseObject)
+                                         {
+                                             NSMutableArray *resourceList = [[NSMutableArray alloc] init];
+                                             for (NSDictionary *attributes in responseObject[@"results"]) {
+                                                 [resourceList addObject:[[[rType class] alloc] initWithAttributes:attributes]];
+                                             }
+                                             // Success block is optional
+                                             if (success) {
+                                                 success(resourceList);
+                                             }
+                                         }
+                                                                               failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                                         {
+                                             // Failure block is optional
+                                             if (failure) {
+                                                 failure(error);
+                                             }
+                                         }];
+    
+    // Ignoring bad SSL certificates should be removed once we have valid certificates
+    // TODO: Remove once in production
+    [operation setAuthenticationAgainstProtectionSpaceBlock:^BOOL(NSURLConnection *connection, NSURLProtectionSpace *protectionSpace)
+     {
+         return YES;
+     }];
+    [operation setAuthenticationChallengeBlock:^(NSURLConnection *connection, NSURLAuthenticationChallenge *challenge)
+     {
+         [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+     }];
+    
+    [self.afClient enqueueHTTPRequestOperation:operation];
+}
+
+
 - (void)createResourceWithData:(LTUResourceData *)rData
                        success:(void (^)(LTUResourceData *responseData))success
                        failure:(void (^)(NSError *error))failure
@@ -172,8 +224,7 @@ static LTUClient *_sharedClient = nil;
                                             constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
                                             {
                                               LTUAttachment *attachment = [rData getAttachment];
-                                              if (attachment)
-                                              {
+                                              if (attachment) {
                                                 [formData appendPartWithFileData:attachment.fieldData
                                                                             name:attachment.fieldName
                                                                         fileName:@"image.jpg"

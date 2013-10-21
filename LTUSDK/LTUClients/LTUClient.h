@@ -52,7 +52,7 @@
  @param rType The resource type, a subclass of `LTUResourceData`
  @param params A dictionay with filter parameter for the resource to list
  @param success A block that gets executed when retrieving the resource list successfully
- @param failure A block that gets executed when retriveing the list fails
+ @param failure A block that gets executed when retrieving the list fails
  */
 - (void)getResourceListOfType:(Class)rType
                withParameters:(NSDictionary *)params
@@ -64,13 +64,32 @@
  Get a lookthatup resource, such as a visual with resource id
  
  @param rType The resource type, a subclass of `LTUResourceData`
+ @param resourceId Id of the resource to get
  @param success A block that gets executed when retrieving the resource successfully
- @param failure A block that gets executed when retriveing a failure
+ @param failure A block that gets executed when retrieving a failure
  */
 - (void)getResourceOfType:(Class)rType
                    withId:(NSInteger)resourceId
                   success:(void (^)(LTUResourceData *resource))success
                   failure:(void (^)(NSError *error))failure;
+
+
+/**
+ Get a lookthatup resource, at a specific location, since ressource can be at various location
+ This function allows a more flexible use of the client.
+ 
+ @param rType The resource type, a subclass of `LTUResourceData`
+ @param url The path of the resource to get
+ @param params A dictionay with filter parameter for the resource to list
+ @param success A block that gets executed when retrieving the resource successfully
+ @param failure A block that gets executed when retrieving a failure
+ */
+- (void)getResourceListOfType:(Class)rType
+                        atUrl:(NSString *)url
+               withParameters:(NSDictionary *)params
+                      success:(void (^)(NSArray *resourceList))success
+                      failure:(void (^)(NSError *error))failure;
+
 
 /**
  Create a particular lookthatup resource, such as `LTUVisual`, `LTUQuery`, etc
@@ -82,6 +101,7 @@
 - (void)createResourceWithData:(LTUResourceData *)rData
                        success:(void (^)(LTUResourceData *responseData))success
                        failure:(void (^)(NSError *error))failure;
+
 
 /**
  Initializes the `LTUClient` with the API URL and authentication info
