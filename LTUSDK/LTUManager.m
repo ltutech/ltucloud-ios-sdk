@@ -131,7 +131,9 @@ static LTUManager *_sharedManager = nil;
                 failure:(void (^)(NSError *error))failure
                finished:(void (^)())finished
 {
+    NSString *url = [NSString stringWithFormat:@"%@projects/%i/visuals/", kLTURootAPIPath, projectId];
     [self.client getResourceListOfType:[LTUVisual class]
+                                 atUrl: url
                         withParameters:@{@"name" : visualName}
                                success:^(NSArray *visualList)
      {
