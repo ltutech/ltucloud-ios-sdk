@@ -18,6 +18,7 @@
  The `UIImage` representing the image.  If getting the LTUImage from lookthatup, the image has to be downloaded separately.
  */
 @property (nonatomic, strong) UIImage       *image;
+@property (nonatomic, strong) UIImage       *thumbnail;
 /**
  The Visual Image Data used to send to lookthatup.  This is meant to be an already compressed and processed `UIImage`
  */

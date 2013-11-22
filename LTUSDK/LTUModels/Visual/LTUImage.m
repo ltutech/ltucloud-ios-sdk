@@ -60,6 +60,16 @@
     return _image;
 }
 
+- (UIImage *)thumbnail
+{
+    if (_thumbnail == nil) {
+        _thumbnail = [self fetchImageWithURL:[NSURL URLWithString:[self.media objectForKey:@"thumbnail"]]];
+    }
+
+    return _thumbnail;
+}
+
+
 - (LTUAttachment *)getAttachment
 {
     if (!self.image) {
