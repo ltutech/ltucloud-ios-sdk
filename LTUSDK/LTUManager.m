@@ -75,14 +75,14 @@ static LTUManager *_sharedManager = nil;
                  success:(void (^)(LTUQuery *queryResult))success
                  failure:(void (^)(NSError *error))failure
                 finished:(void (^)())finished
+     uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock
 {
   LTUQuery *queryData = [[LTUQuery alloc] initWithImage:image
                                                projects:projectIDs
                                                  source:kLTUSource];
 
   [self.client createResourceWithData:queryData
-    success:^(LTUResourceData *responseData)
-    {
+    success:^(LTUResourceData *responseData) {
       if (success) {
         success((LTUQuery*)responseData);
         finished();
@@ -93,7 +93,13 @@ static LTUManager *_sharedManager = nil;
         failure(error);
         finished();
       }
-    }];
+    }
+    uploadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+      if (uploadProgressBlock) {
+         uploadProgressBlock(bytesRead, totalBytesRead, totalBytesExpectedToRead);
+      }
+    }
+  ];
 }
 
 - (void)cancelAllSearchRequests
@@ -193,27 +199,31 @@ static LTUManager *_sharedManager = nil;
                       success:(void (^)(LTUVisual *createdVisual))success
                       failure:(void (^)(NSError *error))failure
                      finished:(void (^)())finished
-
+          uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock
 {
   LTUVisual *visualData = [[LTUVisual alloc] initWithProject:projectID
                                                    withTitle:title image:image
                                                  imageSource:kLTUSource
                                                  andMetaData:metadataArray];
   [self.client createResourceWithData:visualData
-    success:^(LTUResourceData *responseData)
-    {
+    success:^(LTUResourceData *responseData) {
       if (success) {
         success((LTUVisual *)responseData);
         finished();
       }
     }
-    failure:^(NSError *error)
-    {
+    failure:^(NSError *error) {
       if (failure) {
         failure(error);
         finished();
       }
-    }];
+    }
+uploadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead)
+   {
+       if (uploadProgressBlock) {
+           uploadProgressBlock(bytesRead, totalBytesRead, totalBytesExpectedToRead);
+       }
+   }];
 }
 
 - (void)addImage:(UIImage *)image
@@ -223,6 +233,7 @@ static LTUManager *_sharedManager = nil;
          success:(void (^)(LTUImage *createdImage))success
          failure:(void (^)(NSError *error))failure
         finished:(void (^)())finished
+uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock
 {
     LTUImage *imageData = [[LTUImage alloc] init];
     imageData.image = image;
@@ -244,9 +255,15 @@ static LTUManager *_sharedManager = nil;
              failure(error);
              finished();
          }
-     }];
+     }
+                    uploadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead)
+     {
+         if (uploadProgressBlock) {
+             uploadProgressBlock(bytesRead, totalBytesRead, totalBytesExpectedToRead);
+         }
+     }
+     ];
 }
-
 
 
 - (void)cancelAllRequests

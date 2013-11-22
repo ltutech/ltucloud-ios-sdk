@@ -115,7 +115,8 @@
                withImage:(UIImage *)image
                  success:(void (^)(LTUQuery *queryResult))success
                  failure:(void (^)(NSError *error))failure
-                finished:(void (^)())finished;
+                finished:(void (^)())finished
+     uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock;
 
 /**
  Cancel all Search Requests

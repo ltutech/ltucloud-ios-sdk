@@ -97,11 +97,12 @@
  @param rData The resource data which is a subclass of `LTUResourceData`, such as `LTUQuery` or `LTUVisual`
  @param success A block that gets executed when creating the resource succeeds, returning the newly created resource.
  @param failure A block that gets executed when resource creation fails
+ @param uploadProgressBlock A block that gets executed on upload progession
  */
 - (void)createResourceWithData:(LTUResourceData *)rData
                        success:(void (^)(LTUResourceData *responseData))success
-                       failure:(void (^)(NSError *error))failure;
-
+                       failure:(void (^)(NSError *error))failure
+           uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock;
 
 /**
  Initializes the `LTUClient` with the API URL and authentication info

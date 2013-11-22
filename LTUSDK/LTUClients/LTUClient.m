@@ -216,6 +216,7 @@ static LTUClient *_sharedClient = nil;
 - (void)createResourceWithData:(LTUResourceData *)rData
                        success:(void (^)(LTUResourceData *responseData))success
                        failure:(void (^)(NSError *error))failure
+           uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock
 {
   // Use multipartFormRequestWithMethod..
   NSMutableURLRequest *request = [self.afClient multipartFormRequestWithMethod:@"POST"
@@ -232,16 +233,19 @@ static LTUClient *_sharedClient = nil;
                                               }
                                             }];
   AFHTTPRequestOperation *operation = [self.afClient HTTPRequestOperationWithRequest:request
-    success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
+    success:^(AFHTTPRequestOperation *operation, id responseObject) {
       // The passed rData class , ex: visual, or query is the response type we expect
       LTUResourceData *responseData = [[[rData class] alloc] initWithAttributes:(NSDictionary *)responseObject];
       success(responseData);
     }
-    failure:^(AFHTTPRequestOperation *operation, NSError *error)
-    {
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
       failure(error);
     }];
+  [operation setUploadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+    if (uploadProgressBlock) {
+      uploadProgressBlock(bytesRead, totalBytesRead, totalBytesExpectedToRead);
+    }
+  }];
   [self.afClient enqueueHTTPRequestOperation:operation];
 }
 
