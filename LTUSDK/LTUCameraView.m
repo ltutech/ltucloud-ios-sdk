@@ -26,10 +26,6 @@
 // Clean up Capture setup
 - (void)teardownAVCapture
 {
-    if (_videoDataOutputQueue)
-    {
-        dispatch_release(_videoDataOutputQueue);
-    }
     [self.previewLayer removeFromSuperlayer];
 }
 
