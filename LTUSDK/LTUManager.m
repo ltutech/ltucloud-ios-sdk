@@ -72,6 +72,8 @@ static LTUManager *_sharedManager = nil;
 
 - (void)searchInProjects:(NSArray *)projectIDs
                withImage:(UIImage *)image
+              withSource:(NSString *)source
+          withSourceDesc:(NSString *)sourceDesc
                  success:(void (^)(LTUQuery *queryResult))success
                  failure:(void (^)(NSError *error))failure
                 finished:(void (^)())finished
@@ -79,7 +81,8 @@ static LTUManager *_sharedManager = nil;
 {
   LTUQuery *queryData = [[LTUQuery alloc] initWithImage:image
                                                projects:projectIDs
-                                                 source:kLTUSource];
+                                                 source:source
+                                             sourceDesc:sourceDesc];
 
   [self.client createResourceWithData:queryData
     success:^(LTUResourceData *responseData) {

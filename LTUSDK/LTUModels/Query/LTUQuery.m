@@ -53,8 +53,10 @@
     self.media        = attributes[@"_media"];
     self.query_id     = [attributes[@"id"] intValue];
     self.status       = [[LTUQueryStatus alloc] initWithAttributes:attributes[@"status"]];
+    self.source_description = attributes[@"source_description"];
     self.source       = attributes[@"source"];
     self.user         = attributes[@"user"];
+
   }
   return self;
 }
@@ -62,6 +64,7 @@
 - (id)initWithImage:(UIImage *)image
            projects:(NSArray *)projects
              source:(NSString *)source
+         sourceDesc:(NSString *)sourceDesc
 {
   if ((self = [super init]))
   {
@@ -74,6 +77,11 @@
     if (source)
     {
       self.source = source;
+    }
+    if (sourceDesc)
+    {
+        NSLog(@"%@", sourceDesc);
+       self.source_description = sourceDesc;
     }
   }
   return self;
@@ -100,6 +108,10 @@
   if (self.source)
   {
     params[@"source"] = self.source;
+  }
+  if (self.source_description)
+  {
+    params[@"source_description"] = self.source_description;
   }
   return [NSDictionary dictionaryWithDictionary:params];
 }

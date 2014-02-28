@@ -60,6 +60,10 @@
  */
 @property (nonatomic, strong) NSString      *source;
 /**
+ The source where the query came from
+ */
+@property (nonatomic, strong) NSString      *source_description;
+/**
  The returned status of the Query to lookthatup
  */
 @property (nonatomic, strong) LTUQueryStatus *status;
@@ -76,7 +80,8 @@
  @param source The source where the query came from (optional)
  */
 - (id)initWithImage:(UIImage *)image
-                 projects:(NSArray *)projects
-                  source:(NSString *)source;
+           projects:(NSArray *)projects
+             source:(NSString *)source
+         sourceDesc:(NSString *)sourceDesc;
 
 @end

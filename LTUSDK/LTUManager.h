@@ -113,6 +113,8 @@
  */
 - (void)searchInProjects:(NSArray *)projectIDs
                withImage:(UIImage *)image
+              withSource:(NSString *)source
+          withSourceDesc:(NSString *)sourceDesc
                  success:(void (^)(LTUQuery *queryResult))success
                  failure:(void (^)(NSError *error))failure
                 finished:(void (^)())finished
