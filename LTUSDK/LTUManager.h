@@ -30,6 +30,7 @@
  */
 + (LTUManager *)sharedManager;
 
+
 /**
  Create a shared instance of the LTUManager
 
@@ -39,6 +40,16 @@
 + (void)initializeSharedLTUManagerWithUsername:(NSString *)username
                                    andPassword:(NSString *)password;
 
+/**
+ Create a shared instance of the LTUManager
+
+ @param username - LTU API Username
+ @param password - LTU API Password
+ @param password - LTU API Url
+ */
++ (void)initializeSharedLTUManagerWithUsername:(NSString *)username
+                                   andPassword:(NSString *)password
+                               initWithBaseURL:(NSString *)url;
 /**
  Initialize a `LTUManager` with a `LTUClient`
  */

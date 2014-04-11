@@ -10,6 +10,7 @@
 
 // Default LTU API Base URL:
 static NSString *const kLTUBaseURL = @"https://cloud.ltutech.com";
+
 static NSString *const kLTUSource  = @"LTUiOSMobileSDK";
 
 // Shared Manager
@@ -29,12 +30,19 @@ static LTUManager *_sharedManager = nil;
 }
 
 + (void)initializeSharedLTUManagerWithUsername:(NSString *)username
+                                   andPassword:(NSString *)password;
+{
+    [self initializeSharedLTUManagerWithUsername:username andPassword:password initWithBaseURL:kLTUBaseURL];
+}
+
++ (void)initializeSharedLTUManagerWithUsername:(NSString *)username
                                    andPassword:(NSString *)password
+                               initWithBaseURL:(NSString *)url
 {
   // Note:  It's possible to call the init several times to change the sharedManager.
   @synchronized(self)
   {
-    LTUClient *client = [[LTUClient alloc] initWithBaseURL:[NSURL URLWithString:kLTUBaseURL]
+    LTUClient *client = [[LTUClient alloc] initWithBaseURL:[NSURL URLWithString:url]
                                                   withUser:username
                                                andPassword:password];
     _sharedManager = [[LTUManager alloc] initWithLTUClient:client];
