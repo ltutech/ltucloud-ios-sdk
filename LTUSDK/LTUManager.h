@@ -122,10 +122,12 @@
  @param failure - Block to be executed when the search image fails.
  @param finished - Block that is always executed AFTER the success/failure blocks
  */
+
 - (void)searchInProjects:(NSArray *)projectIDs
                withImage:(UIImage *)image
               withSource:(NSString *)source
           withSourceDesc:(NSString *)sourceDesc
+             withTimeout:(int)timeout
                  success:(void (^)(LTUQuery *queryResult))success
                  failure:(void (^)(NSError *error))failure
                 finished:(void (^)())finished

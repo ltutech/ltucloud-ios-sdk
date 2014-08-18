@@ -82,6 +82,7 @@ static LTUManager *_sharedManager = nil;
                withImage:(UIImage *)image
               withSource:(NSString *)source
           withSourceDesc:(NSString *)sourceDesc
+             withTimeout:(int)timeout
                  success:(void (^)(LTUQuery *queryResult))success
                  failure:(void (^)(NSError *error))failure
                 finished:(void (^)())finished
@@ -93,6 +94,7 @@ static LTUManager *_sharedManager = nil;
                                              sourceDesc:sourceDesc];
 
   [self.client createResourceWithData:queryData
+                          withTimeout:(int)timeout
     success:^(LTUResourceData *responseData) {
       if (success) {
         success((LTUQuery*)responseData);

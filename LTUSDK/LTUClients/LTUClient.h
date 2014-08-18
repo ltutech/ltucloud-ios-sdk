@@ -104,6 +104,22 @@
                        failure:(void (^)(NSError *error))failure
            uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock;
 
+- (void)createResourceWithData:(LTUResourceData *)rData
+                   withTimeout:(int)timeout
+                       success:(void (^)(LTUResourceData *responseData))success
+                       failure:(void (^)(NSError *error))failure
+           uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock;
+/**
+ Create a particular lookthatup resource, such as `LTUVisual`, `LTUQuery`, etc
+
+ @param rData The resource data which is a subclass of `LTUResourceData`, such as `LTUQuery` or `LTUVisual`
+ @param withTimeout The timeout of the request
+ @param success A block that gets executed when creating the resource succeeds, returning the newly created resource.
+ @param failure A block that gets executed when resource creation fails
+ @param uploadProgressBlock A block that gets executed on upload progession
+ */
+
+
 /**
  Initializes the `LTUClient` with the API URL and authentication info
 
