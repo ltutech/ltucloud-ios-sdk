@@ -59,9 +59,10 @@ Import the LTUManager header for accessing all the classes and helper methods:
 This can be done in the app delegate.  The shared manager will let you send
 queries, create visuals and get a list of your projects.
 
-    [LTUManager initializeSharedLTUManagerWithUsername:@"myUsername"
-                                           andPassword:@"myPassword"];
-
+```objc
+[LTUManager initializeSharedLTUManagerWithUsername:@"myUsername"
+                                       andPassword:@"myPassword"];
+```
 
 #####Using the LTUCameraView
 
@@ -72,96 +73,107 @@ The LTUCameraView can be added via StoryBoard by using the LTUCameraView instead
 of UIView, and assigning an outlet to the ViewController.  It can also be added
 programmatically as such in the viewDidLoad:
 
-    // The Camera preview has an aspect ratio of 1.3, the screen aspect ratio
-    // has an aspect ratio of the height / width.  This changes between iPhone 4, 5 and iPad)
-    // To fit the preview nicely, we normalize this by making the preview frame wider
-    CGFloat screenAspectRatio = self.view.frame.size.height / self.view.frame.size.width;
-    CGFloat normalizeRatio = screenAspectRatio / 1.3;
-    CGRect cameraFrame = CGRectMake(0,
-                                    0,
-                                    self.view.frame.size.width * normalizeRatio,
-                                    self.view.frame.size.height);
-    self.camView = [[LTUCameraView alloc] initWithFrame:cameraFrame];
-    [self.view insertSubview:self.camView atIndex:0];
+```objc
+// The Camera preview has an aspect ratio of 1.3, the screen aspect ratio
+// has an aspect ratio of the height / width.  This changes between iPhone 4, 5 and iPad)
+// To fit the preview nicely, we normalize this by making the preview frame wider
+CGFloat screenAspectRatio = self.view.frame.size.height / self.view.frame.size.width;
+CGFloat normalizeRatio = screenAspectRatio / 1.3;
+CGRect cameraFrame = CGRectMake(0,
+                                0,
+                                self.view.frame.size.width * normalizeRatio,
+                                self.view.frame.size.height);
+self.camView = [[LTUCameraView alloc] initWithFrame:cameraFrame];
+[self.view insertSubview:self.camView atIndex:0];
+```
 
 You can pause the camera preview as follows:
 
-    [self.camView pausePreview];
+```objc
+[self.camView pausePreview];
+```
 
 By default the preview is already started, but if paused manually, it can be
 started again:
 
-    [self.camView startPreview];
+```objc
+[self.camView startPreview];
+```
 
 To capture the image from the LTUCameraView:
 
-    UIImage *image = [self.camView captureImage];
-
+```objc
+UIImage *image = [self.camView captureImage];
+```
 
 #####Get Project Listing
 
 All your projects can be retrieved via the LTU API as follows:
 
-    [[LTUManager sharedManager] getProjectsWithSuccess:^(NSArray *projectList) {
-            // Store projects somewhere
-        }
+```objc
+[[LTUManager sharedManager] getProjectsWithSuccess:^(NSArray *projectList) {
+        // Store projects somewhere
+    }
 
-        failure:^(NSError *error) {
-            // Handle error
-        }
+    failure:^(NSError *error) {
+        // Handle error
+    }
 
-        finished:^ {
-            // Shared code on project request completion.
-        }];
+    finished:^ {
+        // Shared code on project request completion.
+    }];
+```
 
 
 #####Searching Images
 
 The following is an example on how to search an image within a project:
 
-    UIImage *image = [self.camView captureImage];
-    NSArray *projectIDs = @[@8];
-    [[LTUManager sharedManager] searchInProjects:projectIDs withImage:image
-        success:^(LTUQuery *queryResult) {
-            // Parse Results
-        }
+```objc
+UIImage *image = [self.camView captureImage];
+NSArray *projectIDs = @[@8];
+[[LTUManager sharedManager] searchInProjects:projectIDs withImage:image
+    success:^(LTUQuery *queryResult) {
+        // Parse Results
+    }
 
-        failure:^(NSError *error) {
-            // Handle error
-        }
+    failure:^(NSError *error) {
+        // Handle error
+    }
 
-        finished:^ {
-            // Shared code on Search Image request completion.
-        }];
-
+    finished:^ {
+        // Shared code on Search Image request completion.
+    }];
+```
 
 #####Creating Visuals
 
 To Create a Visual you must collect an array of LTUMetaData objects, and pass it
 to the LTUManager's createVisual method:
 
-    UIImage *image = [self.camView captureImage];
-    LTUMetaData *myData = [[LTUMetaData alloc] initWithValue:@"message"
-                                                      forKey:@"Some Message"
-                                                 andOrdering:0];
+```objc
+UIImage *image = [self.camView captureImage];
+LTUMetaData *myData = [[LTUMetaData alloc] initWithValue:@"message"
+                                                  forKey:@"Some Message"
+                                             andOrdering:0];
 
-    NSArray *myMetadata = @[myData];
-    [[LTUManager sharedManager] createVisualInProject:6
-                                            withTitle:@"FooTitle"
-                                            withImage:image
-                                          andMetadata:myMetadata
-        success:^(LTUVisual *createdVisual) {
-            // Handle events when visual is created
-        }
+NSArray *myMetadata = @[myData];
+[[LTUManager sharedManager] createVisualInProject:6
+                                        withTitle:@"FooTitle"
+                                        withImage:image
+                                      andMetadata:myMetadata
+    success:^(LTUVisual *createdVisual) {
+        // Handle events when visual is created
+    }
 
-        failure:^(NSError *error) {
-            // Handle error
-        }
+    failure:^(NSError *error) {
+        // Handle error
+    }
 
-        finished:^ {
-            // Shared code on Creating Visual request completion.
-        }];
-
+    finished:^ {
+        // Shared code on Creating Visual request completion.
+    }];
+```
 
 #####Canceling Requests
 
@@ -169,16 +181,19 @@ There are 2 helper methods to help cancel requests.
 
 You can cancel all current searchImage requests:
 
-    [[LTUManager sharedManager] cancelAllSearchRequests];
+```objc
+[[LTUManager sharedManager] cancelAllSearchRequests];
+```
 
 You can also cancel all requests which includes getting a project list, creating
 visuals, and searching images:
 
-    [[LTUManager sharedManager] cancelAllRequests];
-
+```objc
+[[LTUManager sharedManager] cancelAllRequests];
+```
 
 Class Overview
 --------------
 
-More detailed documentation about each class can be found under the docs folder
+More detailed documentation about each class can be found under the docs/ folder
 provided with the SDK.
