@@ -299,6 +299,7 @@
 				0FAE38BE1666744700E617DB /* Frameworks */,
 				0FAE38BF1666744700E617DB /* CopyFiles */,
 				0FAE396A1666857600E617DB /* Headers */,
+				309943AC1A66B5CE00962D65 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -334,6 +335,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		309943AC1A66B5CE00962D65 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Move headers into LTUSDK subdirectory\"\nmkdir -p ${TARGET_BUILD_DIR}/Headers/LTUSDK\nmv ${TARGET_BUILD_DIR}/Headers/LTU*.h ${TARGET_BUILD_DIR}/Headers/LTUSDK";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0FAE38BD1666744700E617DB /* Sources */ = {

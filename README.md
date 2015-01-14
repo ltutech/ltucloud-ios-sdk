@@ -51,7 +51,9 @@ Usage
 
 Import the LTUManager header for accessing all the classes and helper methods:
 
-    #import <LTUSDK/LTUManager.h>
+    #import "LTUSDK/LTUManager.h"
+
+(Use "quotes", not <angles>)
 
 
 #####Initialize Shared LTUManager

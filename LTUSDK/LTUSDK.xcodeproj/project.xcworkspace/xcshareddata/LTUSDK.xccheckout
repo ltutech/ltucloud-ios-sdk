@@ -22,7 +22,7 @@
 		<key>18D109335ADC7FEBABC127A799930AAA53A9B129</key>
 		<string>../../..</string>
 		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
-		<string>../../../AFNetworking/</string>
+		<string>../../../AFNetworking</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ltutech/ltucloud-ios-sdk.git</string>
