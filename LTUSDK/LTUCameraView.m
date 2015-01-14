@@ -13,10 +13,10 @@
 
 @interface LTUCameraView () <AVCaptureVideoDataOutputSampleBufferDelegate>
 
-@property (atomic, strong) CIImage                        *nextImage;
-@property (nonatomic, strong) AVCaptureVideoPreviewLayer  *previewLayer;
-@property (nonatomic, strong) AVCaptureVideoDataOutput    *videoDataOutput;
-@property (nonatomic, assign) dispatch_queue_t            videoDataOutputQueue;
+@property CIImage                                 *nextImage;
+@property (nonatomic) AVCaptureVideoPreviewLayer  *previewLayer;
+@property (nonatomic) AVCaptureVideoDataOutput    *videoDataOutput;
+@property (nonatomic) dispatch_queue_t            videoDataOutputQueue;
 
 @end
 
