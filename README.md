@@ -134,7 +134,11 @@ The following is an example on how to search an image within a project:
 ```objc
 UIImage *image = [self.camView captureImage];
 NSArray *projectIDs = @[@8];
-[[LTUManager sharedManager] searchInProjects:projectIDs withImage:image
+[[LTUManager sharedManager] searchInProjects:projectIDs
+                                   withImage:image
+                                  withSource:(NSString *)source // User-defined field (user id for instance)
+                              withSourceDesc:(NSString *)sourceDesc
+                                 withTimeout:(int)timeout
     success:^(LTUQuery *queryResult) {
         // Parse Results
     }
@@ -145,6 +149,9 @@ NSArray *projectIDs = @[@8];
 
     finished:^ {
         // Shared code on Search Image request completion.
+    }
+    uploadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+        // Always executed after the success/failure blocks
     }];
 ```
 
@@ -174,7 +181,11 @@ NSArray *myMetadata = @[myData];
 
     finished:^ {
         // Shared code on Creating Visual request completion.
+    }
+    uploadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+      // Always executed after the success/failure blocks
     }];
+
 ```
 
 #####Canceling Requests

@@ -69,7 +69,7 @@
 
 /**
  Retrieve a `LTUVisual` objects from the LTU API
- 
+
  @param visualID - Id of the visual to get
  @param success - Block to be executed when successfully getting the visual
  @param failure - Block to be executed when getting the visual failed.
@@ -82,7 +82,7 @@
 
 /**
  Retreive a `LTUVisual` objects from the LTU API
- 
+
  @param visualName - Full name of the visual to get
  @param projectId - Id of the project to search in
  @param success - Block to be executed when successfully getting the visual
@@ -99,7 +99,7 @@
 
 /**
  Retreive a `LTUImage` in a visual with a source
- 
+
  @param visualID - Id of the visual to look in
  @param source - Get image with particular source
  @param success - Block to be executed when successfully getting the visual
@@ -118,6 +118,8 @@
 
  @param projectIDs - Array of NSNumbers representing the project IDs to search in.
  @param image - An image to search with
+ @param source - User-defined field (user id for instance)
+ @param sourceDesc - Description of previous field
  @param success - Block to be executed with the `LTUQuery` on successfully searching the image
  @param failure - Block to be executed when the search image fails.
  @param finished - Block that is always executed AFTER the success/failure blocks
@@ -160,7 +162,7 @@
 
 /**
  Add Image in Visual
- 
+
  @param image - The Image to add
  @param visualId - The Visual to add the Image into
  @param source - source description of the image
