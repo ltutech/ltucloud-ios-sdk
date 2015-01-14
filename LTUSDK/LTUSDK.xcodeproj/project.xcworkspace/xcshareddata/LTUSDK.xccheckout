@@ -10,33 +10,33 @@
 	<string>LTUSDK</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7FF8FC18-6EFE-4CD1-9E26-45B7F307D5F9</key>
+		<key>18D109335ADC7FEBABC127A799930AAA53A9B129</key>
+		<string>https://github.com/ltutech/ltucloud-ios-sdk.git</string>
+		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
 		<string>https://github.com/AFNetworking/AFNetworking.git</string>
-		<key>E83B0815-8545-43C6-96BB-66687E2F2549</key>
-		<string>git://code.ltutech.com/ltumobile-ios-sdk</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LTUSDK/LTUSDK.xcodeproj/project.xcworkspace</string>
+	<string>LTUSDK/LTUSDK.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7FF8FC18-6EFE-4CD1-9E26-45B7F307D5F9</key>
-		<string>../../../AFNetworking</string>
-		<key>E83B0815-8545-43C6-96BB-66687E2F2549</key>
+		<key>18D109335ADC7FEBABC127A799930AAA53A9B129</key>
 		<string>../../..</string>
+		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
+		<string>../../../AFNetworking/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>git://code.ltutech.com/ltumobile-ios-sdk</string>
+	<string>https://github.com/ltutech/ltucloud-ios-sdk.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E83B0815-8545-43C6-96BB-66687E2F2549</string>
+	<string>18D109335ADC7FEBABC127A799930AAA53A9B129</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7FF8FC18-6EFE-4CD1-9E26-45B7F307D5F9</string>
+			<string>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AFNetworking</string>
 		</dict>
@@ -44,9 +44,9 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E83B0815-8545-43C6-96BB-66687E2F2549</string>
+			<string>18D109335ADC7FEBABC127A799930AAA53A9B129</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ltumobile-ios-sdk</string>
+			<string>ltucloud-ios-sdk</string>
 		</dict>
 	</array>
 </dict>

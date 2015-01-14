@@ -155,7 +155,8 @@
                   andMetadata:(NSArray*)metadataArray
                       success:(void (^)(LTUVisual *createdVisual))success
                       failure:(void (^)(NSError *error))failure
-                     finished:(void (^)())finished;
+                     finished:(void (^)())finished
+          uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock;
 
 /**
  Add Image in Visual
@@ -170,22 +171,15 @@
         withName:(NSString *)name
          success:(void (^)(LTUImage *createdImage))success
          failure:(void (^)(NSError *error))failure
-        finished:(void (^)())finished;
+        finished:(void (^)())finished
+uploadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))uploadProgressBlock;
+
 /**
  Cancel all requests
 
  @discussion This method will cancel all current requests which include: Searching images, creating visuals, and getting a list of projects.
  */
 - (void)cancelAllRequests;
-
-
-/**
- Cancel all requests
- 
- @discussion This method will cancel all current requests which include: Searching images, creating visuals, and getting a list of projects.
- */
-- (void)waitUntilAllOperationsAreFinished;
-
 
 
 @end
