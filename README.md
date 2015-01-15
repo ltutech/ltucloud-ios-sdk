@@ -11,8 +11,6 @@ Requirements
 The LTU Mobile iOS SDK library is built for use with iOS 5 and up.  The sample
 projects require XCode 4.5 and up.  It uses AFNetworking (which is provided by
 the LTU SDK).
-Info on how to set up AFNetworking can be found here:
-https://github.com/AFNetworking/
 
 The LTU SDK also uses the following frameworks:
 
@@ -41,8 +39,10 @@ This setup is done in a few simple steps:
   - CoreVideo
   - libLTUSDK-lib.a
 
-* Add "$(TARGET_BUILD_DIR)/Headers" to the Build Settings variable
-  "User Header Search Paths"
+* Add "$(SRCROOT)" with the recursive option to the Build Settings variable
+  "User Header Search Paths". This is used for finding LTUSDK headers during
+  compilation and archiving (the LTUSDK directory must be contained inside
+  your source directory).
 
 
 
@@ -51,9 +51,7 @@ Usage
 
 Import the LTUManager header for accessing all the classes and helper methods:
 
-    #import "LTUSDK/LTUManager.h"
-
-(Use "quotes", not <angles>)
+    #import "LTUManager.h"
 
 
 #####Initialize Shared LTUManager
